@@ -1,0 +1,31 @@
+[
+  {
+    "name": "Personal Portfolio",
+    "type": "app",
+    "url": "https://josefaidt.dev",
+    "description": "Progressive Web Application built to showcase my work and blog",
+    "technologies": ["Serverless", "React", "Gatsby", "MDX"]
+  },
+  {
+    "name": "Rouge Theme",
+    "type": "marketplace",
+    "url": "https://marketplace.visualstudio.com/items?itemName=josef.rouge-theme",
+    "urlLabel": "VSCode Marketplace",
+    "description": "Color theme created for VSCode",
+    "technologies": ["VSCode", "JavaScript"]
+  },
+  {
+    "name": "express-fs-router",
+    "type": "npm",
+    "url": "https://www.npmjs.com/package/express-fs-router",
+    "description": "Straightforward filesystem routing utility for Express",
+    "technologies": ["Node", "Express"]
+  },
+  {
+    "name": "svelte-themer",
+    "type": "demo",
+    "url": "https://svelte-themer.now.sh",
+    "description": "Lightweight theming solution for Svelte applications using CSS Variables",
+    "technologies": ["Svelte", "CSS"]
+  }
+]
