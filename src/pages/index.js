@@ -1,16 +1,12 @@
 import React from 'react'
-import fetch from 'node-fetch'
 import Card from '../components/Card'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
-import contacts from '../data/contacts.json'
-import projects from '../data/projects.json'
-import experience from '../data/experience.json'
-import query from '../data/gh-query'
+import { query } from '../helpers/query'
 import { technologies as cardTechnologies } from '../components/Card/Card.module.css'
 import styles from '../styles.module.css'
 
-const HomePage = ({ repositories, projects, experience, contacts }) => {
+const HomePage = ({ projects, experience, contacts }) => {
   return (
     <Container>
       <section aria-label="contact information" className={styles.section}>
@@ -102,19 +98,43 @@ const HomePage = ({ repositories, projects, experience, contacts }) => {
 }
 
 export async function getStaticProps(context) {
-  const getGithubData = async () => {
-    const res = await fetch('https://api.github.com/graphql', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
-      },
-      body: JSON.stringify({ query }),
-    })
-    const data = await res.json()
-    return data?.data
-  }
+  // const getGithubData = async () => {
+  //   const res = await fetch('https://api.github.com/graphql', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Accept: 'application/json',
+  //       Authorization: `Bearer ${process.env.GITHUB_TOKEN}`,
+  //     },
+  //     body: JSON.stringify({ query }),
+  //   })
+  //   const data = await res.json()
+  //   return data?.data
+  // }
+  const { data } = await query(`
+    query {
+      allContacts {
+        name
+        link
+        linkText
+      }
+      allExperiences {
+        title
+        company
+        startDate
+        endDate
+        responsibilities
+      }
+      allProjects {
+        name
+        type
+        url
+        description
+        technologies
+      }
+    }
+  `)
+  const { allContacts: contacts, allExperiences: experience, allProjects: projects } = data || {}
   return {
     props: { projects, experience, contacts }, // will be passed to the page component as props
   }
