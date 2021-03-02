@@ -1,3 +1,13 @@
+.contactList {
+  list-style: none;
+  margin-left: 0;
+  margin-bottom: 0;
+}
+
+.contactListNode {
+  margin-bottom: 0;
+}
+
 .xpHeader {
   display: grid;
   grid-auto-flow: column;
@@ -20,8 +30,12 @@
   }
 }
 
+.xpHeaderNode {
+  margin-bottom: 0;
+}
+
 .xpTitle {
-  /* margin-bottom: 1.45rem; */
+  composes: xpHeaderNode;
 }
 
 @media print {
@@ -31,6 +45,7 @@
 }
 
 .xpDate {
+  composes: xpHeaderNode;
   font-style: italic;
 }
 

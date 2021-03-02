@@ -1,9 +1,16 @@
 [
   {
-    "title": "Full-Stack JavaScript Developer",
+    "title": "Senior Frontend Developer",
+    "company": "IBM",
+    "startDate": "January 2021",
+    "endDate": "Present",
+    "responsibilities": []
+  },
+  {
+    "title": "Frontend Developer",
     "company": "IBM",
     "startDate": "December 2018",
-    "endDate": "Present",
+    "endDate": "January 2021",
     "responsibilities": [
       "Established local front-end development group chapter, leads bi-weekly meetups",
       "Build learning management system (Node.js, React)",

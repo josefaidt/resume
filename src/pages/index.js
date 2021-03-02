@@ -3,42 +3,30 @@ import fetch from 'node-fetch'
 import Card from '../components/Card'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
+import contacts from '../data/contacts.json'
 import projects from '../data/projects.json'
 import experience from '../data/experience.json'
 import query from '../data/gh-query'
 import { technologies as cardTechnologies } from '../components/Card/Card.module.css'
 import styles from '../styles.module.css'
 
-const HomePage = ({ repositories, projects, experience }) => {
+const HomePage = ({ repositories, projects, experience, contacts }) => {
   return (
     <Container>
       <section aria-label="contact information">
         <header>
           <h1>Josef Aidt</h1>
         </header>
-        <p>
-          <strong>Email:</strong>{' '}
-          <a href="mailto:josef.aidt@gmail.com" target="_blank" rel="noopener noreferrer">
-            josef.aidt@gmail.com
-          </a>{' '}
-          <br />
-          <strong>Website:</strong> <a href="https://josefaidt.dev">josefaidt.dev</a> <br />
-          <strong>Twitter:</strong>{' '}
-          <a href="https://twitter.com/josefaidt" target="_blank" rel="noopener noreferrer">
-            @josefaidt
-          </a>{' '}
-          <br />
-          <strong>Twitch:</strong>{' '}
-          <a href="https://twitch.tv/josefaidt" target="_blank" rel="noopener noreferrer">
-            twitch.tv/josefaidt
-          </a>{' '}
-          <br />
-          <strong>Github:</strong>{' '}
-          <a href="https://github.com/josefaidt" target="_blank" rel="noopener noreferrer">
-            github.com/josefaidt
-          </a>{' '}
-          <br />
-        </p>
+        <ul className={styles.contactList}>
+          {contacts.map((contact, i) => (
+            <li key={i} className={styles.contactListNode}>
+              <strong>{contact.name}:</strong>{' '}
+              <a href={contact.link} target="_blank" rel="noopener noreferrer">
+                {contact.linkText}
+              </a>{' '}
+            </li>
+          ))}
+        </ul>
       </section>
       <section>
         <header>
@@ -99,9 +87,9 @@ const HomePage = ({ repositories, projects, experience }) => {
               </p>
             </header>
             <ul>
-              {xp.responsibilities.map((responsibility, k) => (
-                <li key={k}>{responsibility}</li>
-              ))}
+              {Array.isArray(xp.responsibilities) && xp.responsibilities.length
+                ? xp.responsibilities.map((responsibility, k) => <li key={k}>{responsibility}</li>)
+                : null}
             </ul>
           </article>
         ))}
@@ -125,7 +113,7 @@ export async function getStaticProps(context) {
     return data?.data
   }
   return {
-    props: { projects, experience }, // will be passed to the page component as props
+    props: { projects, experience, contacts }, // will be passed to the page component as props
   }
 }
 

@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Email",
+    "link": "mailto:josef.aidt@gmail.com",
+    "linkText": "josef.aidt@gmail.com"
+  },
+  {
+    "name": "Website",
+    "link": "https://josefaidt.dev",
+    "linkText": "josefaidt.dev"
+  },
+  {
+    "name": "Twitter",
+    "link": "https://twitter.com/josefaidt",
+    "linkText": "@josefaidt"
+  },
+  {
+    "name": "Twitch",
+    "link": "https://twitch.tv/josefaidt",
+    "linkText": "twitch.tv/josefaidt"
+  },
+  {
+    "name": "GitHub",
+    "link": "https://github.com/josefaidt",
+    "linkText": "github.com/josefaidt"
+  }
+]
