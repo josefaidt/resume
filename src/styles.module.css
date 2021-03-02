@@ -1,11 +1,13 @@
 .contactList {
   list-style: none;
   margin-left: 0;
-  margin-bottom: 0;
 }
 
-.contactListNode {
-  margin-bottom: 0;
+@media not print {
+  .contactListNode,
+  .contactList {
+    margin-bottom: 0;
+  }
 }
 
 .xpHeader {
@@ -13,6 +15,8 @@
   grid-auto-flow: column;
   grid-auto-columns: max-content;
   grid-gap: 1.5rem;
+
+  margin: 1.2rem 0;
 }
 
 @media only screen and (max-width: 66rem) {
@@ -26,7 +30,7 @@
 @media print {
   .xpHeader {
     margin-top: 0rem;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.8rem;
   }
 }
 
@@ -94,4 +98,8 @@
   .cardDescription {
     margin-bottom: 0.45rem;
   }
+}
+
+.section {
+  margin: 0;
 }

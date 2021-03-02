@@ -1,6 +1,6 @@
 .card {
   background-color: whitesmoke;
-  padding: 1rem;
+  padding: 0.7rem;
   border-radius: 0.2rem;
   border: 1px solid darkgrey;
 
@@ -29,5 +29,6 @@
   .card {
     background-color: transparent;
     border: none;
+    padding-right: 4rem;
   }
 }

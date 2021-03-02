@@ -1,6 +1,10 @@
 .container {
   width: 100%;
   padding: 4rem 0.8rem;
+
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 2.8rem;
 }
 
 @media (min-width: 66rem) {
@@ -14,5 +18,7 @@
 @media print {
   .container {
     padding: 0;
+
+    grid-gap: 0.8rem;
   }
 }

@@ -13,7 +13,7 @@ import styles from '../styles.module.css'
 const HomePage = ({ repositories, projects, experience, contacts }) => {
   return (
     <Container>
-      <section aria-label="contact information">
+      <section aria-label="contact information" className={styles.section}>
         <header>
           <h1>Josef Aidt</h1>
         </header>
@@ -28,7 +28,7 @@ const HomePage = ({ repositories, projects, experience, contacts }) => {
           ))}
         </ul>
       </section>
-      <section>
+      <section className={styles.section}>
         <header>
           <h2>Personal Projects</h2>
         </header>
@@ -41,6 +41,7 @@ const HomePage = ({ repositories, projects, experience, contacts }) => {
                   className={styles.cardLaunch}
                   href={project.url}
                   target="_blank"
+                  rel="noreferrer"
                   style={{ alignSelf: 'flex-start' }}
                 >
                   {project.type.toLowerCase() !== 'download' ? 'Launch ' : ''}
@@ -72,7 +73,7 @@ const HomePage = ({ repositories, projects, experience, contacts }) => {
           ))}
         </Grid>
       </section>
-      <section>
+      <section className={styles.section}>
         <header>
           <h2>Work Experience</h2>
         </header>
@@ -86,11 +87,13 @@ const HomePage = ({ repositories, projects, experience, contacts }) => {
                 {xp.startDate} &ndash; {xp.endDate}
               </p>
             </header>
-            <ul>
-              {Array.isArray(xp.responsibilities) && xp.responsibilities.length
-                ? xp.responsibilities.map((responsibility, k) => <li key={k}>{responsibility}</li>)
-                : null}
-            </ul>
+            {Array.isArray(xp.responsibilities) && xp.responsibilities.length > 0 ? (
+              <ul>
+                {xp.responsibilities.map((responsibility, k) => (
+                  <li key={k}>{responsibility}</li>
+                ))}
+              </ul>
+            ) : null}
           </article>
         ))}
       </section>
