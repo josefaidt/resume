@@ -15,6 +15,7 @@
     "graphql-tools": "^7.0.4",
     "next": "^10.0.5",
     "node-fetch": "^2.6.1",
+    "puppeteer": "^8.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

@@ -17,8 +17,7 @@
 
 @media print {
   .container {
-    padding: 0;
-
-    grid-gap: 0.8rem;
+    padding: 0.5in;
+    grid-gap: 2.3rem;
   }
 }

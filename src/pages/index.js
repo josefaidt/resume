@@ -28,9 +28,9 @@ const HomePage = ({ projects, experience, contacts }) => {
         <header>
           <h2>Personal Projects</h2>
         </header>
-        <Grid>
+        <Grid className={styles.cardsContainer}>
           {projects.map((project, i) => (
-            <Card key={i}>
+            <Card key={i} className={styles.card}>
               <header className={styles.cardHeader}>
                 <h4 className={styles.cardTitle}>{project.name}</h4>
                 <a
@@ -73,25 +73,27 @@ const HomePage = ({ projects, experience, contacts }) => {
         <header>
           <h2>Work Experience</h2>
         </header>
-        {experience.map((xp, i) => (
-          <article key={i}>
-            <header className={styles.xpHeader}>
-              <h3 className={styles.xpTitle}>
-                {xp.title} at {xp.company}
-              </h3>
-              <p className={styles.xpDate}>
-                {xp.startDate} &ndash; {xp.endDate}
-              </p>
-            </header>
-            {Array.isArray(xp.responsibilities) && xp.responsibilities.length > 0 ? (
-              <ul>
-                {xp.responsibilities.map((responsibility, k) => (
-                  <li key={k}>{responsibility}</li>
-                ))}
-              </ul>
-            ) : null}
-          </article>
-        ))}
+        <div className={styles.xpContainer}>
+          {experience.map((xp, i) => (
+            <article key={i}>
+              <header className={styles.xpHeader}>
+                <h3 className={styles.xpTitle}>
+                  {xp.title} at {xp.company}
+                </h3>
+                <p className={styles.xpDate}>
+                  {xp.startDate} &ndash; {xp.endDate}
+                </p>
+              </header>
+              {Array.isArray(xp.responsibilities) && xp.responsibilities.length > 0 ? (
+                <ul>
+                  {xp.responsibilities.map((responsibility, k) => (
+                    <li key={k}>{responsibility}</li>
+                  ))}
+                </ul>
+              ) : null}
+            </article>
+          ))}
+        </div>
       </section>
     </Container>
   )

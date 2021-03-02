@@ -28,17 +28,8 @@ section:last-of-type {
 }
 
 @media print {
-  section {
-    page-break-before: auto;
-    margin-bottom: 1rem;
-  }
-
   a {
     color: var(--theme-text, black);
     text-decoration: none;
-  }
-
-  li {
-    line-height: 0.7rem;
   }
 }
