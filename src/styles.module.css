@@ -7,6 +7,7 @@
 @media screen and (max-width: 768px) {
   .introContainer {
     flex-direction: column-reverse;
+    margin-top: 1.5rem;
   }
 
   .name {
