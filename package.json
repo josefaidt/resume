@@ -5,6 +5,7 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
+    "pdf": "node scripts/pdf",
     "deploy": "yarn build && vercel"
   },
   "dependencies": {

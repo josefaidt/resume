@@ -1,0 +1,23 @@
+name: Push commit on pull request
+on:
+  push:
+    branches:
+      - main
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          ref: ${{ github.head_ref }}
+      - name: Create resume PDF
+        run: yarn pdf
+      - name: Commit created resume
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'josefaidt@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
+          git commit -am "create pdf"
+          git push
