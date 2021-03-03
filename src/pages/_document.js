@@ -18,11 +18,11 @@ class MyDocument extends Document {
           <meta property="twitter:title" content="Resume"></meta>
           <meta
             property="og:description"
-            content="Josef Aidt is a Full-Stack JavaScript Developer from Baton Rouge, Louisiana"
+            content="Josef Aidt is a Senior Frontend Developer from Baton Rouge, Louisiana"
           ></meta>
           <meta
             property="twitter:description"
-            content="Josef Aidt is a Full-Stack JavaScript Developer from Baton Rouge, Louisiana"
+            content="Josef Aidt is a Senior Frontend Developer from Baton Rouge, Louisiana"
           ></meta>
           <link rel="icon" href="/images/favicon.png" type="image/x-icon" />
           <meta property="image" content="/images/favicon.png"></meta>
