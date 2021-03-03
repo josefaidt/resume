@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  padding: 4rem 0.8rem;
+  padding: 1rem 0.8rem;
 
   display: grid;
   grid-auto-flow: row;
@@ -10,8 +10,7 @@
 @media (min-width: 66rem) {
   .container {
     max-width: 60rem;
-    padding-left: 0;
-    padding-right: 0;
+    padding: 4rem 0;
   }
 }
 

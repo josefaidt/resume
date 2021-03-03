@@ -4,9 +4,27 @@
   justify-content: space-between;
 }
 
+@media screen and (max-width: 768px) {
+  .introContainer {
+    flex-direction: column-reverse;
+  }
+
+  .name {
+    margin-top: 2rem;
+  }
+}
+
 .avatarContainer {
   margin-right: 4rem;
   margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .avatarContainer {
+    margin-top: 0;
+    margin-right: 0;
+    align-self: center;
+  }
 }
 
 @media print {

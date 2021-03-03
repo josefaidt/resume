@@ -2,11 +2,12 @@ import React from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import styles from './NotificationToast.module.css'
 
-const NotificationToast = ({ data: n, onClose }) => {
+const NotificationToast = ({ className, data: n, onClose }) => {
   const x = useMotionValue(0)
   const opacity = useTransform(x, [0, 110, 200], ['1', '0.7', '0'])
   return (
     <motion.div
+      className={className}
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       dragElastic={0.7}

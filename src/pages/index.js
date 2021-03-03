@@ -14,7 +14,7 @@ const HomePage = ({ projects, experience, contacts }) => {
         <div className={styles.introContainer}>
           <div>
             <header>
-              <h1>Josef Aidt</h1>
+              <h1 className={styles.name}>Josef Aidt</h1>
             </header>
             <ul className={styles.contactList}>
               {contacts.map((contact, i) => (

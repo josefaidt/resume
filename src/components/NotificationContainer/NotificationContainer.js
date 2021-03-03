@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 // import { useCurrentTheme } from '../../helpers/ThemeContext'
 import { useNotifications } from '../../helpers/NotificationContext'
 import NotificationToast from '../NotificationToast/NotificationToast'
-import { container } from './NotificationContainer.module.css'
+import { container, toast } from './NotificationContainer.module.css'
 
 const NotificationContainer = ({ children, notifications }) => {
   const [notificationState, notificationDispatch] = useNotifications()
@@ -19,10 +19,11 @@ const NotificationContainer = ({ children, notifications }) => {
             <motion.div
               animate={{ x: -10, opacity: 1 }}
               transition={{ ease: 'easeOut', duration: 1 }}
-              className="gtw--notification-toast__container"
               key={n.id}
             >
-              {!n.__internal.toast_shown ? <NotificationToast data={n} onClose={onClose} /> : null}
+              {!n.__internal.toast_shown ? (
+                <NotificationToast className={toast} data={n} onClose={onClose} />
+              ) : null}
             </motion.div>
           )
         })}
