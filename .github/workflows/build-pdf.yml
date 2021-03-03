@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@v1
         with:
           ref: ${{ github.head_ref }}
+      - name: Install dependencies
+        run: yarn
       - name: Create resume PDF
         run: yarn pdf
       - name: Commit created resume
