@@ -15,6 +15,7 @@ async function main() {
       devServer.kill()
       await browser.close()
       console.info('done!')
+      process.exit()
     }
   })
 }
