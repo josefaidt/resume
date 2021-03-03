@@ -51,8 +51,10 @@ const initialState = [
     type: 'info',
     content: {
       title: 'Download the PDF',
-      description:
-        'Press ctrl+P or cmd+P, choose "Print to PDF", and disable headers and footers in "More Settings"',
+      description: {
+        __html:
+          '<a download="josefaidt_Resume.pdf" href="https://github.com/josefaidt/resume/raw/main/josefaidt_resume.pdf">Download created by GitHub Actions</a>',
+      },
     },
   },
 ]

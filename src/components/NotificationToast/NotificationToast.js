@@ -18,7 +18,11 @@ const NotificationToast = ({ data: n, onClose }) => {
           <circle cx="0.45rem" cy="0.55rem" r="0.22rem"></circle>
         </svg>
         <h4 className={styles.title}>{n.content.title}</h4>
-        <p className={styles.description}>{n.content.description}</p>
+        {n?.content?.description?.__html ? (
+          <div className={styles.description} dangerouslySetInnerHTML={n.content.description}></div>
+        ) : (
+          <p className={styles.description}>{n.content.description}</p>
+        )}
         {n.content.buttonText && n.content.buttonFn ? (
           <button onClick={() => n.content.buttonFn()}>{n.content.buttonText}</button>
         ) : null}
