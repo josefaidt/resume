@@ -1,3 +1,25 @@
+.introContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.avatarContainer {
+  margin-right: 4rem;
+  margin-top: 1rem;
+}
+
+@media print {
+  .avatarContainer {
+    margin-right: 2rem;
+  }
+}
+
+.avatar {
+  /* clip-path: circle(40%); */
+  border-radius: 100%;
+}
+
 .contactList {
   list-style: none;
   margin-left: 0;
@@ -81,8 +103,10 @@
   /*  */
 }
 
-.cardsContainer > * {
-  padding-top: 0;
+@media print {
+  .cardsContainer > * {
+    padding-top: 0;
+  }
 }
 
 .cardHeader {

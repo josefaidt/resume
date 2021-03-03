@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import Card from '../components/Card'
 import Grid from '../components/Grid'
 import Container from '../components/Container'
@@ -10,19 +11,32 @@ const HomePage = ({ projects, experience, contacts }) => {
   return (
     <Container>
       <section aria-label="contact information" className={styles.section}>
-        <header>
-          <h1>Josef Aidt</h1>
-        </header>
-        <ul className={styles.contactList}>
-          {contacts.map((contact, i) => (
-            <li key={i} className={styles.contactListNode}>
-              <strong>{contact.name}:</strong>{' '}
-              <a href={contact.link} target="_blank" rel="noopener noreferrer">
-                {contact.linkText}
-              </a>{' '}
-            </li>
-          ))}
-        </ul>
+        <div className={styles.introContainer}>
+          <div>
+            <header>
+              <h1>Josef Aidt</h1>
+            </header>
+            <ul className={styles.contactList}>
+              {contacts.map((contact, i) => (
+                <li key={i} className={styles.contactListNode}>
+                  <strong>{contact.name}:</strong>{' '}
+                  <a href={contact.link} target="_blank" rel="noopener noreferrer">
+                    {contact.linkText}
+                  </a>{' '}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className={styles.avatarContainer}>
+            <Image
+              src="/images/me.jpeg"
+              alt="Picture of Josef Aidt"
+              className={styles.avatar}
+              width={150}
+              height={150}
+            />
+          </div>
+        </div>
       </section>
       <section className={styles.section}>
         <header>
