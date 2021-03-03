@@ -4,8 +4,7 @@ const puppeteer = require('puppeteer')
 async function main() {
   const devServer = spawn('yarn', ['dev'])
   devServer.stdout.on('data', async data => {
-    const msg = String(data)
-    if (msg.startsWith('ready')) {
+    if (String(data).startsWith('ready')) {
       console.info('Next.js server ready')
       const browser = await puppeteer.launch()
       const page = await browser.newPage()
